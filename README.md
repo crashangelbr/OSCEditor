@@ -1,1 +1,1 @@
-OSCEditor
+OSC Editor
