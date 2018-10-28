@@ -3,7 +3,7 @@ export default function (editor, opt = {}) {
 	let bm = editor.BlockManager;
 	let blocks = c.blocks;
 	let stylePrefix = c.stylePrefix;
-
+	
 	const toAdd = name => blocks.indexOf(name) >= 0;
   
   // -- Components --------------------------------------------------------------------------
@@ -211,13 +211,30 @@ export default function (editor, opt = {}) {
 		attributes: {class:'fa fa-gamepad'},
 		content: {
 			type:'Joystick',
-			content:'',
+			content: "<script></script>",
 			style: {
 				height: '200px',
 				width: '200px',
 				activeOnRender: 1
 			}
 		}
-	})
+	}),
+	
+	
+	editor.BlockManager.add('test-block', {
+		label: 'Test block',
+		attributes: {class: 'fa fa-text'},
+		content: {
+			content:'<div id="oie"></div>',
+			script: function () {
+				uil.add('joystick', {  target: document.getElementById("oie"), pos:{left:'0', top:'0', bottom:'0' }, name:'JOY', w:100, multiplicator:1, precision:2, fontColor:'#D4B87B' });
+			},
+			style: {
+				width: '100px',
+				height: '100px',
+				'background-color': 'red',
+			}
+		}
+	});
 	
 }

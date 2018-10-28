@@ -13,7 +13,6 @@
 	<script src="plugins/grapesjs-custom-code/dist/grapesjs-custom-code.min.js"></script>
 	<script src="plugins/grapesjs-touch/dist/grapesjs-touch.min.js"></script>
 	<script src="plugins/grapesjs-osc-uil/dist/grapesjs-osc-uil.min.js"></script>
-	<script src="plugins/grapesjs-osc-uil/dist/uil.js"></script>
 	<!--<script src="plugins/grapesjs-osc-uil/dist/uil.min.js"></script>-->
 	<!--<script src="plugins/grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.js"></script>-->
 	<!--<script src="plugins/grapesjs-mjml/dist/grapesjs-mjml.min.js"></script>-->
@@ -32,8 +31,12 @@
     </div>
 
     <script type="text/javascript">
+        
       var editor = grapesjs.init({
         showOffsets: 1,
+		 canvas: {
+			scripts: ['./plugins/grapesjs-osc-uil/dist/uil.js']
+		},
         noticeOnUnload: 0,
         container: '#gjs',
         height: '100%',
