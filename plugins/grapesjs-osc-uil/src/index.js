@@ -3,7 +3,7 @@ import loadComponents from './components';
 
 export default grapesjs.plugins.add('gjs-ui-components', (editor, opts = {}) => {
   const config = {
-    blocks: ['countdown','PanelGroup', 'Group', 'List', 'Title', 'Buttom', 'Text', 'Number', 'Bool', 'Slide','Knob','Joystick','Fps','Graph','Timeline'],
+    blocks: ['PanelGroup', 'Group', 'List', 'Title', 'Buttom', 'Text', 'Number', 'Bool', 'Slide','Knob','Joystick','Fps','Graph','Timeline'],
     titleComponents: 'OSC Components',
 	titleControls: 'OSC Controls',
     

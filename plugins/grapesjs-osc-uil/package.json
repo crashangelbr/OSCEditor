@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-osc-uil",
-  "version": "0.2.141",
+  "version": "0.2.191",
   "description": "OSC UIL Components",
   "main": "dist/grapesjs-osc-uil.min.js",
   "scripts": {
