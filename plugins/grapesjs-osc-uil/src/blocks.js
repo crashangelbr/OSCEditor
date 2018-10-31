@@ -1,3 +1,5 @@
+
+
 export default function (editor, opt = {}) {
 	const c = opt;
 	let bm = editor.BlockManager;
@@ -6,6 +8,14 @@ export default function (editor, opt = {}) {
 	
 	const toAdd = name => blocks.indexOf(name) >= 0;
   
+    if (c.blocks.indexOf('countdown') >= 0) {
+    bm.add('countdown', {
+      label: 'oi',
+      category: 'teste',
+      attributes: {class:'fa fa-clock-o'},
+      content: '<div class="" data-gjs-type="countdown"></div>'
+    });}
+    
   // -- Components --------------------------------------------------------------------------
 	toAdd('PanelGroup') && bm.add('PanelGroup', {
 		label: 'Panel Group',
@@ -225,14 +235,14 @@ export default function (editor, opt = {}) {
 		label: 'Test block',
 		attributes: {class: 'fa fa-text'},
 		content: {
-			content:'<div id="oie"></div>',
 			script: function () {
-				uil.add('joystick', {  target: document.getElementById("oie"), pos:{left:'0', top:'0', bottom:'0' }, name:'JOY', w:100, multiplicator:1, precision:2, fontColor:'#D4B87B' });
+                uil.add('joystick', {  target: document.getElementById(this.id), isCanvasOnly: true, name:'JOY', w:100, multiplicator:1, precision:2, fontColor:'#D4B87B' });
 			},
 			style: {
-				width: '100px',
-				height: '100px',
-				'background-color': 'red',
+				width: 'auto',
+				height: 'auto',
+                float: 'left',
+				'background-color': 'transparent !important',
 			}
 		}
 	});
